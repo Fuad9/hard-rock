@@ -1,5 +1,5 @@
-// Search Btn function and For Loop
-document.getElementById("search-btn").addEventListener("click", function() {
+// Search Btn event handler and api call
+document.getElementById("search-btn").addEventListener("click", () => {
     const songName = document.getElementById("song-name").value;
     fetch(`https://api.lyrics.ovh/suggest/${songName}`)
         .then((res) => res.json())
@@ -15,9 +15,8 @@ document.getElementById("search-btn").addEventListener("click", function() {
         });
 });
 
-// Song Search Results Function
-
-function searchResults(songTitle, songAlbum, songArtist) {
+// To show song name
+const searchResults = (songTitle, songAlbum, songArtist) => {
     document.getElementById(
         "fancy-results"
     ).innerHTML += `<div class="single-result row align-items-center my-3 p-3">
@@ -29,11 +28,10 @@ function searchResults(songTitle, songAlbum, songArtist) {
                     <button class="btn btn-success" onclick="getLyrics('${songTitle}', '${songArtist}')">Get Lyrics</button>
                 </div>
                 </div>`;
-}
+};
 
-// Lyrics Result Function
-
-function getLyrics(songTitle, songArtist) {
+// To show Lyrics
+const getLyrics = (songTitle, songArtist) => {
     const lyricTitle = document.getElementById("lyrics");
     lyricTitle.innerText = songTitle;
     fetch(`https://api.lyrics.ovh/v1/${songArtist}/${songTitle}`)
@@ -41,4 +39,4 @@ function getLyrics(songTitle, songArtist) {
         .then((data) => {
             document.getElementById("result-lyrics").innerText = data.lyrics;
         });
-}
+};

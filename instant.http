@@ -7,3 +7,6 @@ GET http://api.deezer.com/search?limit=10&q=maria&index=15
 ###
 
 GET https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime
+
+
+### Rest Client is the name of love. love u so much
