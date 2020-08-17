@@ -2,4 +2,8 @@ GET https://api.lyrics.ovh/suggest/baby
 
 ###
 
-GET http://api.deezer.com/search?limit=10&q=summer
+GET http://api.deezer.com/search?limit=10&q=maria&index=15
+
+###
+
+GET https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime
